@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WordCount_Result</title>
+    <!--부트스트랩!-->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+        header{
+            height : 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+        <h1>당신이 입력한 텍스트는 {{total}}개의 단어로 이루어져 있습니다.</h1>
+    </header>
+        <a href="{% url 'home' %}">다시 하기</a>
+        <br>
+        <br>
+
+        <h3> 입력한 텍스트 </h2>
+        <textarea class="form-control" rows="3" readonly> {{full}} </textarea>
+
+        <h2>단어 카운트</h2>
+        {% for word, many in dictionary %}
+        {{word}} : {{many}}
+        <br>
+        {%endfor%}
+    </div>
+</body>
+
+</html>

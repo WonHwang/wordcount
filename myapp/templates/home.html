@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WordCount_Home</title>
+
+    <!--부트스트랩!-->
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+        header {
+            height: 100px;
+        }
+
+        footer {
+            height: 100px;
+            display: flex;
+            justify-content: flex-end;
+            align-items : flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Word Count</h1>
+        </header>
+        <a href="{% url 'about' %}">ABOUT</a>
+        <br>
+
+        <form action="{% url 'result' %}">
+            <textarea name="fulltext" cols="120" rows="20" class="form-control" placeholder="텍스트를 입력하세요"></textarea>
+            <br>
+            <input class="btn btn-default" type="submit" value="Count!">
+        </form>
+
+
+        <footer>
+            <h6>Made by Ediblepotato</h6>
+        </footer>
+    </div>
+</body>
+
+</html>
